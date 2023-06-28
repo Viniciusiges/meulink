@@ -6,13 +6,26 @@ import '../../components/Menu';
 import Menu from '../../components/Menu';
 import LinkItem from '../../components/Menu/LinkItem';
 
+import api from '../../services/api';
+
 export default function Home () {
   const [link, setLink] = useState('');
   const [showModal,setShowModal] = useState(false);
+  const [data, setData] = useState({});
 
-  function handleShortLink () {
-  
-    setShowModal(true)
+  async function handleShortLink () {
+    try{
+      const response = await api.post('/shorten', {
+        long_url: link
+      })
+      setData(response.data);
+      setShowModal(true);
+      setLink('');
+
+    }catch{
+      alert('Ops parece que algo deu errado')
+      setLink('');
+    }
   }
 
     return(
@@ -33,7 +46,9 @@ export default function Home () {
             <button onClick={handleShortLink}>Gerar Link</button>
         </div>
         <Menu/>
-        { showModal && <LinkItem closeModal={()=> setShowModal(false)} />}
+        { showModal && <LinkItem closeModal={()=> setShowModal(false)}
+        content={data}
+        />}
       </div>
     )
   }
