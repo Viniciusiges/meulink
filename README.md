@@ -11,10 +11,10 @@ MEULINK é um aplicação para o encurtamento de links.
 
 🛠 As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do projeto:
 
-JavaScript
-Create React App
-React.js
-Axios
+*JavaScript
+*Create React App
+*React.js
+*Axios
 
 📄 Libraries React:
 
