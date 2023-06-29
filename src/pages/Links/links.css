@@ -10,6 +10,7 @@
 .links-header{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .links-header svg{
@@ -61,6 +62,24 @@
 .link-delete{
     border: 0;
     background: transparent;
+}
+
+.links-empty{
+    display: flex;
+    width: 200px;
+    margin: 24px;
+    background-color: rgb(255, 255, 255, 0.2);
+    background: transparent 0.7;
+    padding: 10px 20px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-text{
+    color: #fff;
+    font-size: 16px;
+
 }
 
 @media (max-width: 750px){
