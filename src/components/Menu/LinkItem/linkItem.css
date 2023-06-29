@@ -34,6 +34,9 @@
 .modal-container span{
     margin: 8px 0;
     color: #a7a7a7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .modal-link{
     background-color: #172742;
